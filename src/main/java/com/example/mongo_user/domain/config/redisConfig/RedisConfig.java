@@ -40,4 +40,15 @@ public class RedisConfig {
         template.setValueSerializer(new Jackson2JsonRedisSerializer<>(TokenInfo.class));
         return template;
     }
+
+    @Bean
+    public RedisTemplate<String, String> template(
+            RedisConnectionFactory redissonConnectionFactory) {
+        RedisTemplate<String, String> template = new RedisTemplate<>();
+        template.setConnectionFactory(redissonConnectionFactory);
+        template.setEnableTransactionSupport(true);
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new Jackson2JsonRedisSerializer<>(String.class));
+        return template;
+    }
 }

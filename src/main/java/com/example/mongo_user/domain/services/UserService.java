@@ -3,6 +3,7 @@ package com.example.mongo_user.domain.services;
 import com.example.mongo_user.app.dtos.UserDTO;
 import com.example.mongo_user.domain.entities.User;
 import com.example.mongo_user.domain.repositories.UserRepository;
+import com.example.mongo_user.domain.utils.CacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
