@@ -21,6 +21,8 @@ public class RequestFactory {
   public boolean test() {
     HttpHeaders requestHeaders = new HttpHeaders();
     requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+    requestHeaders.add("username", "a");
+    requestHeaders.add("password", "b");
 
     Map<String, Object> bodyRequest = new HashMap<>();
 
